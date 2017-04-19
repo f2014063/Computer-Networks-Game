@@ -436,7 +436,7 @@ int main() {
                     if (send (newSocket[i], turn, strlen(turn), 0) != strlen(turn)){}
                     //    printf("[ERROR] Unable to send the data.\n");
 
-                    if (send (newSocket[i], src, strlen(src), 0) != strlen(src)) {}
+                    if (send (newSocket[i], src, strlen(src), 0) != strlen(src)) {  }
                     //    printf("[ERROR] Unable to send the data.\n");
                 }
         	}	
@@ -466,6 +466,7 @@ int main() {
         	}
         	
         	char *answerBuf =  (char *)malloc(sizeof(char)*4);
+            printf("%d\n", answer);
         	sprintf(answerBuf, "%d", answer);
 
             memset(recvBuffer, 0, 35);     
