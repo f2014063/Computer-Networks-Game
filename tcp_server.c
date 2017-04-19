@@ -1,3 +1,14 @@
+/*
+Group 22
+
+Team Members 
+
+Aamod Kharb         2014A7PS063P
+Harshit Jain        2014A7PS101P
+Darshit Khajanchi   2014A7PS144P
+
+*/
+
 #include <stdio.h>
 #include <sys/socket.h>
 #include <netinet/in.h>
