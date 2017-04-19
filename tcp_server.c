@@ -245,7 +245,6 @@ int main() {
             newSocket[i]=temp1;
 
             sprintf(id, "%d", (i+1));
-            printf("%s\t %d\n", id, (int) strlen(id));
 
             if ( send ( newSocket[i], id, strlen(id), 0) != strlen(id))
                 printf("[ERROR] Unable to send the data.\n");
@@ -313,8 +312,6 @@ int main() {
         }
         if (k==9)
             names[i][k]='\0';
-
-        printf("%s\t%d\n",names[i],strlen(names[i]));
     }
 
     int temp=0;
@@ -340,45 +337,45 @@ int main() {
 
                     if (isPlaying[k]==1) {
 
-                        if (send (newSocket[i], names[k], strlen(names[k]), 0) != strlen(names[k]))
-                            printf("[ERROR] Unable to send the data.\n");
+                        if (send (newSocket[i], names[k], strlen(names[k]), 0) != strlen(names[k])) {}
+                        //    printf("[ERROR] Unable to send the data.\n");
 
                         sprintf(sc, "%d", score[k]);
 
-                        if (send (newSocket[i], sc, strlen(sc), 0) != strlen(sc))
-                            printf("[ERROR] Unable to send the data.\n");
+                        if (send (newSocket[i], sc, strlen(sc), 0) != strlen(sc)) {}
+                        //    printf("[ERROR] Unable to send the data.\n");
 
                     }
 
                     else {
                         
-                        if (send (newSocket[i], "         ", 9, 0) != 9)
-                            printf("[ERROR] Unable to send the data.\n");
+                        if (send (newSocket[i], "         ", 9, 0) != 9) {}
+                     //       printf("[ERROR] Unable to send the data.\n");
 
-                        if (send (newSocket[i], "  ", 2, 0) != 1)
-                            printf("[ERROR] Unable to send the data.\n");
+                        if (send (newSocket[i], "  ", 2, 0) != 1) {}
+                       //     printf("[ERROR] Unable to send the data.\n");
                     }                    
                 }
 
                 while (k<5) {
 
-                    if (send (newSocket[i], "         ", 9, 0) != 9)
-                        printf("[ERROR] Unable to send the data.\n");
+                    if (send (newSocket[i], "         ", 9, 0) != 9) {}
+                    //    printf("[ERROR] Unable to send the data.\n");
 
-                    if (send (newSocket[i], "  ", 2, 0) != 1)
-                        printf("[ERROR] Unable to send the data.\n");
+                    if (send (newSocket[i], "  ", 2, 0) != 1) {}
+                    //    printf("[ERROR] Unable to send the data.\n");
 
                     k++;
                 }
 
                 if (nor<=temp) {
-                    if (send (newSocket[i], "         ", 9, 0) != 9)
-                        printf("[ERROR] Unable to send the data.\n");
+                    if (send (newSocket[i], "         ", 9, 0) != 9) {}
+                     //   printf("[ERROR] Unable to send the data.\n");
 
                 }
                 else {
-                    if (send (newSocket[i], names[loser], 9, 0) != 9)
-                        printf("[ERROR] Unable to send the data.\n");
+                    if (send (newSocket[i], names[loser], 9, 0) != 9) {}
+                       // printf("[ERROR] Unable to send the data.\n");
                 }
             }
 
