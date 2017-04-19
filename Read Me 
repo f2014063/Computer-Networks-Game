@@ -1,0 +1,4 @@
+To compile use the MakeFile
+
+To run the client executable : ./client
+To run the server executable : ./server
