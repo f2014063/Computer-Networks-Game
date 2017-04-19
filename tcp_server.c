@@ -120,6 +120,8 @@ char * GenerateQnAType2(int ran) {
     return temp1;  
 }
 
+// Code to print Scoreboard
+
 void updateview(char user[][10], int count) {
     int i=0;
     printf("\t\t\tScoreboard\n");
@@ -130,6 +132,8 @@ void updateview(char user[][10], int count) {
     }
     printf("\n\n\n");
 }
+
+// Code to update scoreboard
 
 void updateScoreBoard(int id, char user[][10], int val, int count) {
 
@@ -231,7 +235,7 @@ int main() {
       exit( EXIT_FAILURE );
     }
 
-    // Acceps connections till a specified period of time (25 seconds) 
+    // Accepts connections till a specified period of time (25 seconds) 
 
     do {
 
@@ -426,14 +430,14 @@ int main() {
 
                     sprintf(turn, "%d", (j+1));
 
-                    if (send (newSocket[i], names[j], strlen(names[j]), 0) != strlen(names[j]))
-                            printf("[ERROR] Unable to send the data.\n");
+                    if (send (newSocket[i], names[j], strlen(names[j]), 0) != strlen(names[j])){}
+                    //        printf("[ERROR] Unable to send the data.\n");
 
-                    if (send (newSocket[i], turn, strlen(turn), 0) != strlen(turn))
-                        printf("[ERROR] Unable to send the data.\n");
+                    if (send (newSocket[i], turn, strlen(turn), 0) != strlen(turn)){}
+                    //    printf("[ERROR] Unable to send the data.\n");
 
-                    if (send (newSocket[i], src, strlen(src), 0) != strlen(src))
-                        printf("[ERROR] Unable to send the data.\n");
+                    if (send (newSocket[i], src, strlen(src), 0) != strlen(src)) {}
+                    //    printf("[ERROR] Unable to send the data.\n");
                 }
         	}	
         

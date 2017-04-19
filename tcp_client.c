@@ -6,6 +6,7 @@
 #include <arpa/inet.h>
 #include <unistd.h>
 
+
 int main()
 {
     int clientSocket,i,j,iid,tu;
@@ -45,10 +46,17 @@ int main()
     if ((recvBytes =(recv(clientSocket, id, 1, 0) < 0)) == 1)
         printf("[ERROR] No input id received from client.\n");
 
-    printf("Enter Nick (Max 10 chars) : \n");
+    printf("Enter Nick (Max 10 Characters) : \n");
     scanf("%[^\n]s", name);
 
-    // Send Clinet Nick
+    while (strlen(name)>10) {
+
+        printf("Please enter Nick again (Max 10 Characters) : \n");
+        scanf("%c", &a);
+        scanf("%[^\n]s", name);        
+    }
+
+    // Send Client Nick
 
     if (send(clientSocket, name, strlen(name), 0) != strlen(name))
         printf("[ERROR] Unable to send the data.\n");
