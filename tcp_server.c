@@ -159,6 +159,7 @@ void updateScoreBoard(int id, char user[][10], int val, int count) {
         if(score[i] <= 0){
             
             isPlaying[i]=0;
+            close (newSocket[i]);
             printf("\t\t\t\t%s Loser\n",user[i]);
         }
 
@@ -823,7 +824,8 @@ int main() {
     }
 
     for (i=0;i<cnt;i++) {
-        close (newSocket[i]);
+        if (isPlaying[i]==1)
+            close (newSocket[i]);
     }
     
     close (serverSocket);
